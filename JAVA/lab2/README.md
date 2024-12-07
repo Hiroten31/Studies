@@ -10,7 +10,8 @@
 ### 2. Model RGB może być rozszerzony o kanał Alpha. Wszystkie cztery parametry powinny być obsługiwane przez konstruktor kanoniczny a dodatkowo powinna być możliwość tworzenia rekordu bez podawania wartości kanału alfa - wtedy ma on otrzymywać domyślną wartość 0.
 
 ```java
-public Color(int R, int G, int B, int A) {
+    public record Color(int R, int G, int B, int A) {
+        public Color(int R, int G, int B, int A) {
             if(R < 0 || R > 255 || G < 0 || G > 255 || B < 0 || B > 255 || A < 0 || A > 100) {
                 throw new IllegalArgumentException("Provide correct color (0-255) and alpha (0-100) values.") {
 
@@ -26,6 +27,7 @@ public Color(int R, int G, int B, int A) {
         public Color(int R, int G, int B) {
             this(R, G, B, 0);
         }
+    }
 ```
 
 ### 3. Zademonstruj w funkcji main tworzenie obiektów typu Color, wypisywanie ich składowych oraz działanie metody toString().
