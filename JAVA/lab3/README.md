@@ -90,8 +90,61 @@ Wynik uruchomienia:
 
 
 ### Zadanie 3: Logowanie informacji z wykorzystaniem SLF4J
+1. Dodaj zależność do biblioteki SLF4J w pliku pom.xml:
+```xml
+<dependencies>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>2.0.7</version>
+         </dependency>
+</dependencies>
+```
+IntellIJ IDEA ma problem ze znaleziem wersji 'slf4j-api', tym samym importowania bibliotek. Rozwiązanie to usunięcie folderu '.idea' i otworzenie projektu z pliku pom.xml
 
-### Zadanie 4: Polimorfizm i rozszerzenie funkcjonalności
+
+2. Zaimplementuj logowanie w klasie ShapeDescriber:
+```java
+package org.example;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+public class ShapeDescriber {
+    static final Logger logger = LoggerFactory.getLogger(ShapeDescriber.class);
+
+    public static void describe(Shape shape) {
+        logger.info("Type = {} ", shape.getClass().getSimpleName());
+        logger.info("Color = {} ", shape.shapeColor);
+        logger.info("Area = {}", shape.getArea());
+        logger.info("Perimeter = {}", shape.getPerimeter());
+    }
+}
+
+```
+
+3. Przetestuj działanie logowania w funkcji main:
+```java
+public class Main {
+    public static void main(String[] args) {
+        Color zielony = new Color(0, 255, 0, 100);
+        Color bialy = new Color(255, 255, 255);
+
+        Triangle zielonyTrojkat = new Triangle(3, 4, 5, 6, zielony);
+        Rectangle bialyProstokat = new Rectangle(3, 4, bialy);
+
+        ShapeDescriber.describe(zielonyTrojkat);
+        ShapeDescriber.describe(bialyProstokat);
+
+    }
+}
+```
+
+Wynik uruchomienia (na brak informacji z loggera pomogło przeładowanie i debug projektu):
+![image](https://github.com/user-attachments/assets/7d4e43c3-5456-48af-9134-349b0648e097)
+
+
+### ~~Zadanie 4: Polimorfizm i rozszerzenie funkcjonalności~~
+
 
 ### Zadanie 5: Dodaj testy jednostkowe
 
