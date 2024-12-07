@@ -148,6 +148,7 @@ Wynik uruchomienia (na brak informacji z loggera pomogło przeładowanie i debug
 
 ### Zadanie 5: Dodaj testy jednostkowe
 Według 'Run with Coverage' projekt pokrywa 80% metod oraz 84% linii kodu. JaCoCo jest mocno niekooperatywny, więc po wielu próbach go zostawiam.
+
 ![image](https://github.com/user-attachments/assets/7adc9e62-7fc3-4c67-b570-9bbb326a9fbb)
 
 Dodatkowe pluginy i dependecies do pom.xml:
