@@ -1,7 +1,10 @@
 package org.example;
 
+
 public class Main {
     public static void main(String[] args) {
+        System.setProperty("org.slf4j.simpleLogger.defaultLogLevel", "info");
+
         Color zielony = new Color(0, 255, 0, 100);
         Color bialy = new Color(255, 255, 255);
 
