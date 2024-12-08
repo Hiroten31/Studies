@@ -151,6 +151,10 @@ Według 'Run with Coverage' projekt pokrywa 80% metod oraz 84% linii kodu. JaCoC
 
 ![image](https://github.com/user-attachments/assets/7adc9e62-7fc3-4c67-b570-9bbb326a9fbb)
 
+Po extra godzinie udało się naprawić JaCoCo (testy były importane ze złej biblioteki)
+![image](https://github.com/user-attachments/assets/ae1d754e-60e2-4eaa-af46-92ec25e24176)
+
+
 Dodatkowe pluginy i dependecies do pom.xml:
 ```xml
 <!-- https://mvnrepository.com/artifact/junit/junit -->
